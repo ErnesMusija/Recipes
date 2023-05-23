@@ -10,5 +10,6 @@ urlpatterns = [
     path('login', views.login, name="login"),
     path('logout', views.logout, name="logout"),
     path('delete_acc', views.delete_acc, name="delete_acc"),
+    path('preporuka_recepta', views.preporuka_recepta, name="preporuka_recepta"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +\
               static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

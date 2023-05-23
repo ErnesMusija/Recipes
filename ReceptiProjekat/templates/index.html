@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,23 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1>Dobrodosao {{user.name}} {{user.surname}}</h1>
+<h2>Recepti: </h2>
+<ul>
+    {% for recept in recepti %}
+    <li> <h3> {{recept.naziv}} - <a style="font-size: 15px"> {{recept.opis}} </a> </h3> </li>
+    <ul>
+    {% for sastojak in recept.sastojci.all %}
+        <li> <h4>  {{ sastojak.naziv }} </h4></li>
+    {% endfor %}
+    </ul>
+    {% endfor %}
+</ul>
+<h2>Sastojci: </h2>
+<ul>
+    {% for sastojak in sastojci %}
+    <li> <h3> {{sastojak.naziv}} </h3> </li>
+    {% endfor %}
+</ul>
 </body>
 </html>

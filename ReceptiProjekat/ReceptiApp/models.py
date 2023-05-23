@@ -48,3 +48,69 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.username
 
+
+class Sastojak(models.Model):
+    naziv = models.CharField(max_length=100)
+
+    voce = 'V'
+    povrce = 'P'
+    meso = 'M'
+    zitarice = 'Z'
+    mlijecni_jaja = 'L'
+    bilje_zacini = 'B'
+    ostali = 'O'
+    ulje_mast = 'U'
+
+    tipovi = [
+        (voce, 'Voce'),
+        (povrce, 'Povrce'),
+        (meso, 'Meso'),
+        (zitarice, 'Zitarice'),
+        (mlijecni_jaja, 'Mlijeko i jaja'),
+        (bilje_zacini, 'Biljni i zacini'),
+        (ulje_mast, 'Ulje i masti'),
+        (ostali, 'Ostali'),
+    ]
+
+    tip = models.CharField(max_length=1, choices=tipovi, default=ostali)
+
+    def __str__(self):
+        return self.naziv
+
+
+class Recept(models.Model):
+    naziv = models.CharField(max_length=100)
+    opis = models.CharField(max_length=500)
+    vrijeme_pripreme = models.TimeField(blank=True, null=True)
+    sastojci = models.ManyToManyField(Sastojak, through='SastojakRecept')
+
+    def __str__(self):
+        return self.naziv
+
+
+class SastojakRecept(models.Model):
+    sastojak = models.ForeignKey(Sastojak, on_delete=models.CASCADE)
+    recept = models.ForeignKey(Recept, on_delete=models.CASCADE)
+    kolicina = models.IntegerField(default=1)
+
+    gram = 'G'
+    broj = 'B'
+    komad = 'K'
+    kasikica = 'M'
+    kasika = 'V'
+    soljica = 'S'
+    ostali = 'O'
+
+    jedinice = [
+        (gram, 'Gram'),
+        (broj, 'Broj'),
+        (komad, 'Komad'),
+        (kasikica, 'Kasikica'),
+        (kasika, 'Kasika'),
+        (soljica, 'Soljica'),
+        (ostali, 'Ostali'),
+    ]
+
+    mjerna_jedinica = models.CharField(max_length=1, choices=jedinice, default=broj)
+
+    dodatni_info = models.CharField(max_length=100, blank=True, null=True)
