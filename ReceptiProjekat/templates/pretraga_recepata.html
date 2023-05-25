@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pretraga recepata</title>
+        <link rel="stylesheet" href="{% static 'css/search_tasks.css' %}">
+  </head>
+  <body>
+    <div id="search-container">
+      <form action="{% url 'pretraga_recepata' %}" method="get">
+        <input type="text" id="search-bar" name="q" placeholder="Trazi recepte...">
+        <button type="submit">Pretrazi</button>
+      </form>
+    </div>
+    <!-- mozda stavit da se klikne na recept za detalje, mozda u bazu stavit nacin pripreme npr lorem ipsum -->
+    <ul id="tasks">
+      {% for recept in recepti %}
+        <li> <h3> {{recept.naziv}} - <a style="font-size: 15px"> {{recept.opis}} </a> </h3>
+        <img style="width: 200px; height: 200px; object-fit: cover;" src="{{ recept.slika.url }}" alt="{{ recept.naziv }}" />
+    </li>
+    <ul>
+    {% for sastojak in recept.sastojci.all %}
+        <li> <h4>  {{ sastojak.naziv }} </h4></li>
+    {% endfor %}
+    </ul>
+      {% empty %}
+        <li>Nema reepata sa tim imenom.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

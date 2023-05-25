@@ -6,11 +6,48 @@
     <title>Title</title>
 </head>
 <body>
+<!-- znaci dodati dugme koje salje na admin stranicu ako si prijavljen ko admin -->
+<!-- dugme koje vodi na pretragu recepata -->
+<!-- dugme koje vodi na preporuku recepata po sastojcima -->
+<!-- dugmad za sve ono osatlo prijava registracija kontakt tako to -->
+<!-- prikazat nekolko najpopularnijih recepata, a ja to te recepte random dodat -->
 <h1>Dobrodosao {{user.name}} {{user.surname}}</h1>
-<h2>Recepti: </h2>
+<a href="/admin/">
+<div class="admin-button">
+ADMIN
+</div>
+</a>
+<a href="registration">
+<div class="admin-button">
+REGISTRATION
+</div>
+</a>
+<a href="login">
+<div class="admin-button">
+LOGIN
+</div>
+</a>
+<a href="/logout">
+<div class="admin-button">
+LOGOUT
+</div>
+</a>
+<a href="/pretraga_recepata">
+<div class="admin-button">
+Pretrazi sve recepte
+</div>
+</a>
+<a href="/preporuka_recepta">
+<div class="admin-button">
+Preporuka recepta
+</div>
+</a>
+<h2>Najpopularniji recepti: </h2>
 <ul>
-    {% for recept in recepti %}
-    <li> <h3> {{recept.naziv}} - <a style="font-size: 15px"> {{recept.opis}} </a> </h3> </li>
+    {% for recept in popularni_recepti %}
+    <li> <h3> {{recept.naziv}} - <a style="font-size: 15px"> {{recept.opis}} </a> </h3>
+        <img style="width: 200px; height: 200px; object-fit: cover;" src="{{ recept.slika.url }}" alt="{{ recept.naziv }}" />
+    </li>
     <ul>
     {% for sastojak in recept.sastojci.all %}
         <li> <h4>  {{ sastojak.naziv }} </h4></li>

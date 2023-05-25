@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib.auth import get_user_model
 from django.contrib import messages
 from .models import *
+import random
 
 # Create your views here.
 
@@ -10,11 +11,13 @@ from .models import *
 def index(request):
     recepti = Recept.objects.all()
     sastojci = Sastojak.objects.all()
+    popularni_recepti = random.sample(list(recepti), 4)
 
     context = {
         'user': request.user,
         'recepti': recepti,
         'sastojci': sastojci,
+        'popularni_recepti': popularni_recepti
     }
     return render(request, 'index.html', context)
 
@@ -93,4 +96,33 @@ def delete_acc(request):
 
 
 def preporuka_recepta(request):
-    return render(request, 'preporuka_recepta.html')
+    recepti = Recept.objects.all()
+    sastojci = Sastojak.objects.all()
+    odabrani_sastojci = Sastojak.objects.filter(naziv__in=['Fasirano Meso', 'Kupus', 'Jaje'])
+    preporuceni_recepti = []
+
+    for recept in recepti:
+        if all(elementi in odabrani_sastojci for elementi in recept.sastojci.all()):
+            preporuceni_recepti.append(recept)
+
+    context = {
+        'sastojci': sastojci,
+        'preporuceni_recepti': preporuceni_recepti,
+    }
+
+    return render(request, 'preporuka_recepta.html', context)
+
+
+def pretraga_recepata(request):
+    query = request.GET.get('q')
+
+    if query:
+        recepti = Recept.objects.filter(naziv__icontains=query) | Recept.objects.filter(opis__icontains=query)
+    else:
+        recepti = Recept.objects.all()
+
+    context = {
+        'recepti': recepti,
+        'query': query
+    }
+    return render(request, 'pretraga_recepata.html', context)

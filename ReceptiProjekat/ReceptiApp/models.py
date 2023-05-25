@@ -83,6 +83,7 @@ class Recept(models.Model):
     opis = models.CharField(max_length=500)
     vrijeme_pripreme = models.TimeField(blank=True, null=True)
     sastojci = models.ManyToManyField(Sastojak, through='SastojakRecept')
+    slika = models.ImageField(blank=True, null=True, upload_to='images')
 
     def __str__(self):
         return self.naziv
