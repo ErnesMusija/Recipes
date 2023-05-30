@@ -3,8 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
-        <link rel="stylesheet" href="{% static 'index_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'style_index.css' %}">
 </head>
 <body>
 <!-- znaci dodati dugme koje salje na admin stranicu ako si prijavljen ko admin -->
@@ -13,36 +15,55 @@
 <!-- dugmad za sve ono osatlo prijava registracija kontakt tako to -->
 <!-- prikazat nekolko najpopularnijih recepata, a ja to te recepte random dodat -->
 <h1>Dobrodosao {{user.name}} {{user.surname}}</h1>
-<a href="/admin/">
-<div class="admin-button">
-ADMIN
-</div>
-</a>
-<a href="registration">
-<div class="admin-button">
-REGISTRATION
-</div>
-</a>
-<a href="login">
-<div class="admin-button">
-LOGIN
-</div>
-</a>
-<a href="/logout">
-<div class="admin-button">
-LOGOUT
-</div>
-</a>
-<a href="/pretraga_recepata">
-<div class="admin-button">
-Pretrazi sve recepte
-</div>
-</a>
-<a href="/preporuka_recepta">
-<div class="admin-button">
-Preporuka recepta
-</div>
-</a>
+
+
+
+<div class="menu-container">
+  
+    <input type="checkbox" id="openmenu" class="hamburger-checkbox">
+    
+    <div class="hamburger-icon">
+      <label for="openmenu" id="hamburger-label">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>    
+    </div>
+  
+      <div class="menu-pane">
+        
+        <nav>
+          <ul class="menu-links">
+           
+         
+            </span>
+              
+            </li>
+            
+            <li><a href="/admin/">ADMIN</a>
+             
+            </li>
+            <li><a href="registration">REGISTRATION</a></li>
+            <li><a href="login">LOGIN</a></li>
+          </ul>
+           <ul class="menu-links">
+                      
+                         <span id="DC-info">
+           
+            </span></li>
+  
+            <li><a href="/logout">LOGOUT</a></li>
+            <li><a href="/pretraga_recepata">Pretrazi sve recepte</a></li>
+            <li><a href="/preporuka_recepta">Preporuka recepta</a></li>
+          </ul>
+          
+          
+        </nav>
+      </div>
+
+
+
 <h2>Najpopularniji recepti: </h2>
 <ul>
     {% for recept in popularni_recepti %}

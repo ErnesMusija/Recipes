@@ -4,12 +4,12 @@
 <html>
   <head>
     <title>Registracija</title>
-	  <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <link rel = "icon" href ="https://cdn-icons-png.flaticon.com/512/234/234618.png">
+	  <link rel="stylesheet" href="{% static 'registration_style.css' %}">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/234/234618.png">
   </head>
   <body>
-    <h1>Registracija</h1>
-    <p>Molimo popunite formu sa odgovarjucim informacijama</p>
+    <h1 class="centered">Registracija</h1>
+ 
     <form action="registration" method="POST">
       {% csrf_token %}
         <label>Unesite ime: <input type="text" name="name" required /></label>
@@ -22,4 +22,4 @@
       <input type="submit" value="Potvrdi" />
     </form>
   </body>
-</html>html>
+</html>

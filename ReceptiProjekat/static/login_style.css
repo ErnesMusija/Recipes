@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #3a3a3a;
+  }
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 80px;
+ 
+  }
+  
+  p {
+    color: #f7f7f7;
+    text-align: center;
+   
+    }
+  
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh; /* Postavljanje visine spremnika na visinu prozora */
+      }
+      
+      form {
+        
+        width: 400px;
+        background-color: #ffffff;
+        padding: 60px;
+        border-radius: 5px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+      }
+
+
+form label {
+    
+    display: block;
+    margin-bottom: 10px;
+  }
+form input[type="email"],
+form input[type="password"] {
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  border: none;
+  display: block;
+  padding: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+  color: #4A4A4A;
+}
+
+form input[type="submit"] {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: #eec81d;
+  color: #222222;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+}
