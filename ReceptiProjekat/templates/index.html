@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
-    <link rel="stylesheet" href="{% static 'style_index.css' %}">
+    <link rel="stylesheet" href="{% static 'index_style.css' %}">
 </head>
 <body>
 <!-- znaci dodati dugme koje salje na admin stranicu ako si prijavljen ko admin -->
@@ -64,24 +64,31 @@
 
 
 
-<h2>Najpopularniji recepti: </h2>
-<ul>
-    {% for recept in popularni_recepti %}
-    <li> <h3> {{recept.naziv}} - <a style="font-size: 15px"> {{recept.opis}} </a> </h3>
-        <img style="width: 200px; height: 200px; object-fit: cover;" src="{{ recept.slika.url }}" alt="{{ recept.naziv }}" />
-    </li>
-    <ul>
-    {% for sastojak in recept.sastojci.all %}
-        <li> <h4>  {{ sastojak.naziv }} </h4></li>
-    {% endfor %}
-    </ul>
-    {% endfor %}
-</ul>
-<h2>Sastojci: </h2>
-<ul>
-    {% for sastojak in sastojci %}
-    <li> <h3> {{sastojak.naziv}} </h3> </li>
-    {% endfor %}
-</ul>
+      <h2>Najpopularniji recepti:</h2>
+      <ul class="recepti-container">
+        {% for recept in popularni_recepti %}
+        <li class="recept-item">
+          <div class="recept-image">
+            <img src="{{ recept.slika.url }}" alt="{{ recept.naziv }}">
+          </div>
+          <div class="recept-info">
+            <h3>{{recept.naziv}}</h3>
+            <p>{{recept.opis}}</p>
+            <h4>Sastojci:</h4>
+            <ul class="sastojci-list">
+              {% for sastojak in recept.sastojci.all %}
+              <li>{{sastojak.naziv}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      <h2>Sastojci:</h2>
+      <ul class="sastojci-container">
+        {% for sastojak in sastojci %}
+        <li class="sastojci-item">{{sastojak.naziv}}</li>
+        {% endfor %}
+      </ul>
 </body>
 </html>

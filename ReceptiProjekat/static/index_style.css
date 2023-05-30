@@ -68,7 +68,7 @@ display: none;
 }
 
 div.menu-pane {
-  background-color: #4C3A1E;
+  background-color: rgba(76, 58, 30, 0.94);
   position: absolute;
   transform: translateX(-105vw);
   transform-origin: (0, 0);
@@ -76,6 +76,8 @@ div.menu-pane {
   height: 100%;
   transition: 0.6s ease-in-out;
 }
+
+
 
 .menu-pane p {
   color: black;
@@ -166,5 +168,70 @@ input.hamburger-checkbox {
   width: 10vw;
   opacity: 0;
   height: 6vh;
+}
+
+
+
+.recepti-container {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.recept-item {
+  width: 300px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recept-image {
+  text-align: center;
+}
+
+.recept-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.recept-info h3 {
+  margin: 10px 0;
+}
+
+.recept-info p {
+  margin: 0;
+}
+
+.recept-info h4 {
+  margin: 20px 0 10px;
+}
+
+.sastojci-list {
+  padding-left: 20px;
+}
+
+.sastojci-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sastojci-item {
+  margin: 10px;
+  padding: 8px 12px;
+  background-color: #e7e1d9;
+  color: #4C3A1E;
+  border-radius: 20px;
 }
 
