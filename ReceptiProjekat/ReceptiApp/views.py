@@ -96,9 +96,15 @@ def delete_acc(request):
 
 
 def preporuka_recepta(request):
+    selected_items = []
+    if request.method == 'POST':
+        selected_items = request.POST.getlist('selected_items')
+    else:
+        sastojci = Sastojak.objects.all()
+
+    odabrani_sastojci = Sastojak.objects.filter(id__in=selected_items)
     recepti = Recept.objects.all()
     sastojci = Sastojak.objects.all()
-    odabrani_sastojci = Sastojak.objects.filter(naziv__in=['Fasirano Meso', 'Kupus', 'Jaje'])
     preporuceni_recepti = []
 
     for recept in recepti:

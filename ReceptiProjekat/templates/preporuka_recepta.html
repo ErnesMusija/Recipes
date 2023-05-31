@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<form method="post" >
+  {% csrf_token %}
+    {% for sastojak in sastojci %}
+    <input name="selected_items" type="checkbox" value="{{ sastojak.id }}">{{ sastojak.naziv }}</input>
+    {% endfor %}
+
+  <button type="submit">Submit</button>
+</form>
 <body>
 {% for recept in preporuceni_recepti %}
 <h1> {{recept.naziv}} </h1>
