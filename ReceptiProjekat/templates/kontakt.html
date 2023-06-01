@@ -15,11 +15,12 @@
 </head>
 <body>
   <h1>Kontaktirajte nas</h1>
-  <form action="submit.php" method="post">
+  <form action="kontakt" method="POST">
+    {% csrf_token %}
     <label for="email">Vaša e-mail adresa:</label>
     <input type="email" id="email" name="email" required>
     <label for="message">Vaša poruka:</label>
-    <textarea id="message" name="message" rows="6" required></textarea>
+    <textarea id="message" name="poruka" rows="6" required></textarea>
     <button type="submit">Pošalji</button>
   </form>
 </body>
