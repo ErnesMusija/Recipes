@@ -10,6 +10,26 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
    
 
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+ 
+ 
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- slidck slider -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css.map" integrity="undefined" crossorigin="anonymous" />
+
+ 
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href=" {% static 'css/responsive.css' %}" rel="stylesheet" />
+
+
+
+
   </head>
 <body>
   <h1 id="prvi-h1">Recepti</h1>
@@ -69,7 +89,7 @@
 
 
 
-      <h2>Najpopularniji recepti:</h2>
+      <h2 id="saban" >Najpopularniji recepti:</h2>
       <ul class="recepti-container">
         {% for recept in popularni_recepti %}
         <li class="recept-item">
@@ -77,9 +97,9 @@
             <img src="{{ recept.slika.url }}" alt="{{ recept.naziv }}">
           </div>
           <div class="recept-info">
-            <h3>{{recept.naziv}}</h3>
+            <h3 id="mudja">{{recept.naziv}}</h3>
             <p>{{recept.opis}}</p>
-            <h4>Sastojci:</h4>
+            <h4 id="stefan">Sastojci:</h4>
             <ul class="sastojci-list">
               {% for sastojak in recept.sastojci.all %}
               <li>{{sastojak.naziv}}</li>
@@ -89,7 +109,7 @@
         </li>
         {% endfor %}
       </ul>
-      <h2>Sastojci:</h2>
+      <h2 id="saban">Sastojci:</h2>
       <ul class="sastojci-container">
         {% for sastojak in sastojci %}
         <li class="sastojci-item">{{sastojak.naziv}}</li>
@@ -103,11 +123,11 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <div class="detail-box">
-              <h1>
-                Discover Restuarant And Food
+              <h1 id="prvi-h1">
+                Otkrijte svoju najdrazu hranu
               </h1>
-              <p>
-                when looking at its layout. The point of using Lorem Ipsum
+              <p id="prvi-h2">
+                Ako je ovo ovo, onda je ovo hit
               </p>
             </div>
             <div class="find_container ">
@@ -123,46 +143,15 @@
         </div>
       </div>
       <div class="slider_container">
+        {% for recept in recepti %}
         <div class="item">
           <div class="img-box">
-            <img src="{% static 'images/slider-img1.png' %}" alt="" />
+            <img src="{{ recept.slika.url }}" alt="{{ recept.naziv }}" class="small-image" />
+
           </div>
         </div>
-        <div class="item">
-          <div class="img-box">
-            <img src="{% static 'images/slider-img2.png' %}" alt="" />
-          </div>
-        </div>
-        <div class="item">
-          <div class="img-box">
-            <img src="images/slider-img3.png" alt="" />
-          </div>
-        </div>
-        <div class="item">
-          <div class="img-box">
-            <img src="images/slider-img4.png" alt="" />
-          </div>
-        </div>
-        <div class="item">
-          <div class="img-box">
-            <img src="images/slider-img1.png" alt="" />
-          </div>
-        </div>
-        <div class="item">
-          <div class="img-box">
-            <img src="images/slider-img2.png" alt="" />
-          </div>
-        </div>
-        <div class="item">
-          <div class="img-box">
-            <img src="images/slider-img3.png" alt="" />
-          </div>
-        </div>
-        <div class="item">
-          <div class="img-box">
-            <img src="images/slider-img4.png" alt="" />
-          </div>
-        </div>
+        {% endfor %}
+       
       </div>
     </section>
     <!-- end slider section -->
@@ -189,18 +178,18 @@
             <div class="info_links">
               <ul>
                 <li class="active">
-                  <a href="index.html">
+                  <a href="/">
                     Pocetna
                   </a>
                 </li>
                 <li>
-                  <a href="about.html">
+                  <a href="/autori">
                     O nama
                   </a>
                 </li>
                 <li>
-                  <a class="" href="blog.html">
-                    Blog
+                  <a class="" href="/kontakt">
+                    Kontakt
                   </a>
                 </li>
                 <li>
@@ -236,6 +225,27 @@
             </p>
           </div>
         </footer>
-        <!-- footer section -->    
+        <!-- footer section --> 
+        
+        
+
+
+<!-- jQery -->
+
+{% static 'js/custom.js' %}
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<!-- bootstrap js -->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<!-- slick  slider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+<!-- nice select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+<!-- custom js -->
+<script src="{% static 'js/script.js' %}"></script>
+
+
+
+
+
 </body>
 </html>

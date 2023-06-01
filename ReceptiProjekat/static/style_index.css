@@ -4,15 +4,35 @@ body {
   font-family: 'Libre Caslon Text', serif;
   background-color: #ac8552;
 }
-
+#saban{
+  color: #FFB03B;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+}
+#mudja{
+  font-size: 35px;
+  font-family: 'Satisfy', sans-serif;
+  font-weight: bold;
+}
+#stefan{
+  font-weight: bold;
+  font-family: 'Libre Caslon Text', serif;
+}
 #prvi-h1{
+      margin-top: 20px;
     font-family: 'Satisfy', sans-serif;
     font-size: 65px;
     color: #FFB03B;
+    margin-bottom: 40px;
 }
 h1{
     font-family: 'Satisfy', sans-serif;
     font-size: 45px;
+}
+#prvi-h2 {
+  color: #111111;
+  font-family: 'Satisfy', sans-serif;
+  font-size: 25px;
 }
 .body-text {
   padding-top: 20vh;
@@ -461,4 +481,10 @@ input.hamburger-checkbox {
 
 .footer_section p a {
   color: inherit;
+}
+img.small-image {
+  max-width: 300px;
+  width: 300px;
+  height: 300px; 
+  border-radius: 50%;
 }

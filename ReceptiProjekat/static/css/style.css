@@ -521,60 +521,7 @@ a:focus {
   color: #ffe537;
 }
 
-.app_section {
-  background-image: url(../images/app-bg.png);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  padding: 225px 0 175px 0;
-  color: #ffffff;
-}
 
-.app_section .row {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.app_section .detail-box h2 {
-  margin-bottom: 25px;
-}
-
-.app_section .detail-box h2 span {
-  color: #ffe537;
-}
-
-.app_section .detail-box p {
-  margin-bottom: 0;
-}
-
-.app_section .detail-box .app_btn_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 35px 0;
-}
-
-.app_section .detail-box .app_btn_box a {
-  width: 145px;
-}
-
-.app_section .detail-box .download_btn {
-  display: inline-block;
-  padding: 12px 45px;
-  background-color: #ffe537;
-  color: #000000;
-  border-radius: 45px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border: 1px solid #ffe537;
-  outline: none;
-}
-
-.app_section .detail-box .download_btn:hover {
-  background-color: transparent;
-  color: #ffe537;
-}
 
 .about_section .box {
   text-align: center;
@@ -607,98 +554,10 @@ a:focus {
   color: #000000;
 }
 
-.news_section .box {
-  text-align: center;
-  margin-top: 45px;
-}
 
-.news_section .box .img-box img {
-  -webkit-filter: drop-shadow(0 2px 7px rgba(0, 0, 0, 0.3));
-          filter: drop-shadow(0 2px 7px rgba(0, 0, 0, 0.3));
-  border-radius: 45px;
-}
-
-.news_section .box .detail-box {
-  margin-top: 25px;
-}
-
-.news_section .box .detail-box h4 {
-  font-weight: bold;
-}
-
-.news_section .box .detail-box a {
-  display: inline-block;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
-  background-color: #4855fe;
-  border-radius: 100%;
-  font-size: 12px;
-  color: #ffffff;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.news_section .box .detail-box a:hover {
-  background-color: #ffe537;
-  color: #000000;
-}
-
-.client_section {
-  text-align: center;
-}
-
-.client_section .detail-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 45px;
-}
-
-.client_section .detail-box h4 {
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-.client_section .detail-box p {
-  margin: 20px 0;
-}
-
-.client_section .detail-box i.fa-quote-left {
-  font-size: 24px;
-  color: #4855fe;
-}
-
-.client_section .carousel-control-next {
-  position: unset;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
-  background-color: #ffe537;
-  border-radius: 100%;
-  font-size: 12px;
-  color: #ffffff;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  opacity: 1;
-  margin: auto;
-  margin-top: 25px;
-}
-
-.client_section .carousel-control-next:hover {
-  background-color: #4855fe;
-  color: #ffffff;
-}
 
 .footer_container {
-  background-image: url(../images/footer-bg.png);
+
   background-size: 100%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -710,7 +569,7 @@ a:focus {
 .info_section {
   color: #ffffff;
   padding: 45px 0;
-  background-color: #070e6a;
+  background-color: #ac8552;;
 }
 
 .info_section .contact_box {
@@ -785,7 +644,7 @@ a:focus {
 .footer_section {
   position: relative;
   text-align: center;
-  background-color: #070e6a;
+  background-color: #ac8552;;
 }
 
 .footer_section p {
@@ -797,4 +656,3 @@ a:focus {
 .footer_section p a {
   color: inherit;
 }
-/*# sourceMappingURL=style.css.map */
