@@ -6,9 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
-    <link rel="stylesheet" href="{% static 'index_style.css' %}">
-</head>
+    <link rel="stylesheet" href="{% static 'style_index.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+   
+
+  </head>
 <body>
+  <h1 id="prvi-h1">Recepti</h1>
+  
 <!-- znaci dodati dugme koje salje na admin stranicu ako si prijavljen ko admin -->
 <!-- dugme koje vodi na pretragu recepata -->
 <!-- dugme koje vodi na preporuku recepata po sastojcima -->
@@ -90,5 +95,147 @@
         <li class="sastojci-item">{{sastojak.naziv}}</li>
         {% endfor %}
       </ul>
+
+
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="detail-box">
+              <h1>
+                Discover Restuarant And Food
+              </h1>
+              <p>
+                when looking at its layout. The point of using Lorem Ipsum
+              </p>
+            </div>
+            <div class="find_container ">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider_container">
+        <div class="item">
+          <div class="img-box">
+            <img src="{% static 'images/slider-img1.png' %}" alt="" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-box">
+            <img src="{% static 'images/slider-img2.png' %}" alt="" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-box">
+            <img src="images/slider-img3.png" alt="" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-box">
+            <img src="images/slider-img4.png" alt="" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-box">
+            <img src="images/slider-img1.png" alt="" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-box">
+            <img src="images/slider-img2.png" alt="" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-box">
+            <img src="images/slider-img3.png" alt="" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-box">
+            <img src="images/slider-img4.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+    
+
+
+      <div class="footer_container">
+        <!-- info section -->
+        <section class="info_section ">
+          <div class="container">
+            <div class="contact_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="info_links">
+              <ul>
+                <li class="active">
+                  <a href="index.html">
+                    Pocetna
+                  </a>
+                </li>
+                <li>
+                  <a href="about.html">
+                    O nama
+                  </a>
+                </li>
+                <li>
+                  <a class="" href="blog.html">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a class="" href="testimonial.html">
+                    Izjava
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- end info_section -->
+    
+    
+        <!-- footer section -->
+        <footer class="footer_section">
+          <div class="container">
+            <p>
+              &copy; <span id="displayYear"></span> Sva prava pridržava
+              <a href="https://html.design/">Belmin i Ernes</a><br>
+              Distribuirao: <a href="https://themewagon.com/">Certigon</a>
+            </p>
+          </div>
+        </footer>
+        <!-- footer section -->    
 </body>
 </html>
