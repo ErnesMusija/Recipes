@@ -132,3 +132,11 @@ def pretraga_recepata(request):
         'query': query
     }
     return render(request, 'pretraga_recepata.html', context)
+
+
+def kontakt(request):
+    return render(request, 'kontakt.html')
+
+
+def autori(request):
+    return render(request, 'autori.html')

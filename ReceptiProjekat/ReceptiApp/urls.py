@@ -12,5 +12,7 @@ urlpatterns = [
     path('delete_acc', views.delete_acc, name="delete_acc"),
     path('preporuka_recepta', views.preporuka_recepta, name="preporuka_recepta"),
     path('pretraga_recepata', views.pretraga_recepata, name="pretraga_recepata"),
+    path('kontakt', views.kontakt, name="kontakt"),
+    path('autori', views.autori, name="autori"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +\
               static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
