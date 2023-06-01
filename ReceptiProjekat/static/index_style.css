@@ -74,12 +74,12 @@ display: none;
 
 #openmenu:checked ~ .hamburger-icon span:nth-of-type(2) {
   transform: translate(0%, 175%) rotate(-45deg);
-  background-color: white;
+  background-color: rgb(131, 11, 11);
 }
 
 #openmenu:checked ~ .hamburger-icon span:nth-of-type(3) {
   transform: rotate(45deg);
-  background-color: white;
+  background-color: rgb(36, 5, 5);
 }
 
 #openmenu:checked ~ .hamburger-icon span:nth-of-type(1) {
@@ -207,10 +207,10 @@ input.hamburger-checkbox {
 .recept-item {
   width: 300px;
   margin: 20px;
-  background-color: #fff;
+  background-color: #f7f7f7;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 6px rgba(119, 119, 119, 0.952);
 }
 
 .recept-image {
