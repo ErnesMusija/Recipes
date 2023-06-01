@@ -135,6 +135,14 @@ def pretraga_recepata(request):
 
 
 def kontakt(request):
+    if request.method == 'POST':
+        poruka = request.POST['poruka']
+        email = request.POST['email']
+
+        user = request.user
+        kontaktiranje = Kontakt.objects.create(tekst=poruka, user=user, email=email)
+        kontaktiranje.save()
+
     return render(request, 'kontakt.html')
 
 
@@ -142,5 +150,15 @@ def autori(request):
     return render(request, 'autori.html')
 
 
-def komentari(request):
-    return render(request, 'komentari.html')
+def prikazi_recept(request, recept_id):
+    if request.method == 'POST':
+        komentar = request.POST['komentar']
+
+    recept = Recept.objects.get(id=recept_id)
+    komentari = Komentar.objects.filter(recept_id=recept_id)
+    context = {
+        'recept': recept,
+        'komentari': komentari,
+    }
+
+    return render(request, 'prikazi_recept.html', context)

@@ -116,14 +116,25 @@ class SastojakRecept(models.Model):
 
     dodatni_info = models.CharField(max_length=100, blank=True, null=True)
 
+    def __str__(self):
+        return self.recept.naziv + '-' + self.sastojak.naziv
+
 
 class Komentar(models.Model):
     tekst = models.CharField(max_length=500)
+    recept = models.ForeignKey(Recept, on_delete=models.CASCADE)
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     vrijeme = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user.name + str(self.id)
 
 
 class Kontakt(models.Model):
     tekst = models.CharField(max_length=500)
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     vrijeme = models.DateTimeField(auto_now_add=True)
+    email = models.CharField(max_length=150, blank=True)
+
+    def __str__(self):
+        return self.user.name + str(self.id)

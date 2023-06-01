@@ -15,5 +15,6 @@ urlpatterns = [
     path('kontakt', views.kontakt, name="kontakt"),
     path('autori', views.autori, name="autori"),
     path('komentari', views.autori, name="komentari"),
+    path('prikazi_recept/<int:recept_id>', views.prikazi_recept, name="prikazi_recept"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +\
               static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
