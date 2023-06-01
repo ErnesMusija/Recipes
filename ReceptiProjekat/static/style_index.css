@@ -6,13 +6,18 @@ body {
 }
 
 #prvi-h1{
+      margin-top: 20px;
     font-family: 'Satisfy', sans-serif;
     font-size: 65px;
     color: #FFB03B;
+    margin-bottom: 40px;
 }
 h1{
     font-family: 'Satisfy', sans-serif;
     font-size: 45px;
+
+    
+
 }
 .body-text {
   padding-top: 20vh;
@@ -461,4 +466,10 @@ input.hamburger-checkbox {
 
 .footer_section p a {
   color: inherit;
+}
+img.small-image {
+  max-width: 300px;
+  width: 300px;
+  height: 300px; 
+  border-radius: 50%;
 }
