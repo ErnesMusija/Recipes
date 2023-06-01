@@ -7,3 +7,5 @@ admin.site.register(MyUser)
 admin.site.register(Sastojak)
 admin.site.register(Recept)
 admin.site.register(SastojakRecept)
+admin.site.register(Komentar)
+

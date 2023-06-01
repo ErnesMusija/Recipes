@@ -115,3 +115,15 @@ class SastojakRecept(models.Model):
     mjerna_jedinica = models.CharField(max_length=1, choices=jedinice, default=broj)
 
     dodatni_info = models.CharField(max_length=100, blank=True, null=True)
+
+
+class Komentar(models.Model):
+    tekst = models.CharField(max_length=500)
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    vrijeme = models.DateTimeField(auto_now_add=True)
+
+
+class Kontakt(models.Model):
+    tekst = models.CharField(max_length=500)
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    vrijeme = models.DateTimeField(auto_now_add=True)

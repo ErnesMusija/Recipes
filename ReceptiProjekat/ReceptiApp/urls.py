@@ -14,5 +14,6 @@ urlpatterns = [
     path('pretraga_recepata', views.pretraga_recepata, name="pretraga_recepata"),
     path('kontakt', views.kontakt, name="kontakt"),
     path('autori', views.autori, name="autori"),
+    path('komentari', views.autori, name="komentari"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +\
               static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

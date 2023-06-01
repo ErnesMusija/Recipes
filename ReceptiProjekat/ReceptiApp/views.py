@@ -140,3 +140,7 @@ def kontakt(request):
 
 def autori(request):
     return render(request, 'autori.html')
+
+
+def komentari(request):
+    return render(request, 'komentari.html')
