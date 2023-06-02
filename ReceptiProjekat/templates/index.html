@@ -13,32 +13,20 @@
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 
- 
- 
   <!-- nice select -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
   <!-- slidck slider -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css.map" integrity="undefined" crossorigin="anonymous" />
 
- 
   <!-- Custom styles for this template -->
   <link href="{% static 'css/stylee.css' %}" rel="stylesheet" />
   <!-- responsive style -->
   <link href=" {% static 'css/responsive.css' %}" rel="stylesheet" />
 
-
-
-
   </head>
 <body>
   <h1 id="prvi-h1">Recepti</h1>
-  
-<!-- znaci dodati dugme koje salje na admin stranicu ako si prijavljen ko admin -->
-<!-- dugme koje vodi na pretragu recepata -->
-<!-- dugme koje vodi na preporuku recepata po sastojcima -->
-<!-- dugmad za sve ono osatlo prijava registracija kontakt tako to -->
-<!-- prikazat nekolko najpopularnijih recepata, a ja to te recepte random dodat -->
 <h1>Dobrodosao {{user.name}} {{user.surname}}</h1>
 
 
@@ -92,6 +80,8 @@
       <h2 id="saban" >Najpopularniji recepti:</h2>
       <ul class="recepti-container">
         {% for recept in popularni_recepti %}
+        <!-- znaci zbog ovog postane plavo ne znam bgm i pokvari velicine one -->
+        <a href="/prikazi_recept/{{ recept.id }}">
         <li class="recept-item">
           <div class="recept-image">
             <img src="{{ recept.slika.url }}" alt="{{ recept.naziv }}">
@@ -107,6 +97,7 @@
             </ul>
           </div>
         </li>
+        </a>
         {% endfor %}
       </ul>
       <h2 id="saban">Sastojci:</h2>

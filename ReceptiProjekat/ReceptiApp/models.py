@@ -81,6 +81,7 @@ class Sastojak(models.Model):
 class Recept(models.Model):
     naziv = models.CharField(max_length=100)
     opis = models.CharField(max_length=500)
+    uputa = models.CharField(max_length=1000, blank=True, null=True)
     vrijeme_pripreme = models.TimeField(blank=True, null=True)
     sastojci = models.ManyToManyField(Sastojak, through='SastojakRecept')
     slika = models.ImageField(blank=True, null=True, upload_to='images')
