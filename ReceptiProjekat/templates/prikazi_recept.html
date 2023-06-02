@@ -1,23 +1,51 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <<link rel="stylesheet" href="{% static 'prikazi_recept_style.css' %}">
+  <title>Recipe Page</title>
 </head>
+
 <body>
+  <div class="recipe-container">
+    <div class="recipe-image">
+      <img src="{{ recept.slika.url }}" alt="{{ recept.naziv }}">
+    </div>
+    <div class="recipe-info">
+      <h2>{{ recept.naziv }}</h2>
+      <p>{{ recept.opis }}</p>
+      <h3>Sastojci:</h3>
+      <ul>
+        {% for sastojak in recept.sastojci.all %}
+        <li>{{ sastojak.naziv }}</li>
+        {% endfor %}
+      </ul>
+      <h3>Upute:</h3>
+      <p>{{ recept.uputa }}</p>
+      <h3>Vrijeme pripreme:</h3>
+      <p>{{ recept.vrijeme_pripreme }}</p>
+    </div>
+  </div>
 
-<h1> {{recept.naziv}} </h1>
+  <div class="comments-section">
+    <h2>Komentari</h2>
+    {% for komentar in komentari %}
+    <div class="comment">
+      <p>{{ komentar.tekst }}</p>
+    </div>
+    {% endfor %}
 
-{% for komentar in komentari %}
-<h1>{{ komentar.tekst }}</h1>
-
-{% endfor %}
-
-<form action="" method="POST">
-    {% csrf_token %}
-    <label for="message">Vaš komentar:</label>
-    <textarea id="message" name="komentar" rows="6" required></textarea>
-    <button type="submit">Pošalji</button>
-  </form>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <label for="message">Vaš komentar:</label>
+      <textarea id="message" name="komentar" rows="6" required></textarea>
+      <button type="submit">Pošalji</button>
+    </form>
+  </div>
 </body>
+
 </html>

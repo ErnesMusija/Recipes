@@ -151,10 +151,13 @@ def autori(request):
 
 
 def prikazi_recept(request, recept_id):
+    recept = Recept.objects.get(id=recept_id)
+
     if request.method == 'POST':
         komentar = request.POST['komentar']
+        novi_komentar = Komentar.objects.create(tekst=komentar, user=request.user, recept=recept)
+        novi_komentar.save()
 
-    recept = Recept.objects.get(id=recept_id)
     komentari = Komentar.objects.filter(recept_id=recept_id)
     context = {
         'recept': recept,
