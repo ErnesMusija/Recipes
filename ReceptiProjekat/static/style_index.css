@@ -9,14 +9,21 @@ body {
   text-align: center;
   font-family: 'Pacifico', cursive;
 }
+#narcis{
+    color: #2b2b2b;
+  
+}
 #mudja{
   font-size: 35px;
   font-family: 'Satisfy', sans-serif;
   font-weight: bold;
+  color: #FFB03B;
 }
 #stefan{
   font-weight: bold;
   font-family: 'Libre Caslon Text', serif;
+  color: #FFB03B;
+
 }
 #prvi-h1{
       margin-top: 20px;
@@ -355,7 +362,7 @@ input.hamburger-checkbox {
 
 .client_section .detail-box i.fa-quote-left {
   font-size: 24px;
-  color: #4855fe;
+  color: #6cfe48;
 }
 
 .client_section .carousel-control-next {

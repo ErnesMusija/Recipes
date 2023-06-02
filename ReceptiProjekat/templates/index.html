@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
-    <link rel="stylesheet" href="{% static 'index_style.css' %}">
+    <link rel="stylesheet" href="{% static 'style_index.css' %}">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
    
 
@@ -88,11 +88,11 @@
           </div>
           <div class="recept-info">
             <h3 id="mudja">{{recept.naziv}}</h3>
-            <p>{{recept.opis}}</p>
+            <p id="narcis">{{recept.opis}}</p>
             <h4 id="stefan">Sastojci:</h4>
             <ul class="sastojci-list">
               {% for sastojak in recept.sastojci.all %}
-              <li>{{sastojak.naziv}}</li>
+              <li id="narcis">{{sastojak.naziv}}</li>
               {% endfor %}
             </ul>
           </div>
