@@ -154,9 +154,22 @@ def prikazi_recept(request, recept_id):
     recept = Recept.objects.get(id=recept_id)
 
     if request.method == 'POST':
+        komentar_id = request.POST.get('komentar_id')  # Assuming you have a hidden input field in your form containing the comment ID
         komentar = request.POST['komentar']
-        novi_komentar = Komentar.objects.create(tekst=komentar, user=request.user, recept=recept)
-        novi_komentar.save()
+
+        if komentar_id:  # Check if a comment ID is provided
+            try:
+                existing_komentar = Komentar.objects.get(id=komentar_id, user=request.user)
+                existing_komentar.tekst = komentar
+                existing_komentar.save()
+                # Handle success or redirect as desired
+            except Komentar.DoesNotExist:
+                # Handle the case when the comment ID is invalid or the comment does not belong to the user
+                pass
+        else:
+            novi_komentar = Komentar.objects.create(tekst=komentar, user=request.user, recept=recept)
+            novi_komentar.save()
+            # Handle success or redirect as desired
 
     komentari = Komentar.objects.filter(recept_id=recept_id)
     context = {
