@@ -26,15 +26,13 @@ button {
     margin-bottom: 10px;
   }
   
-  /* Style the recipe headings */
+
   .recepti h1 {
     color: #333;
     font-size: 24px;
     margin-bottom: 20px;
   }
-  /* styles.css */
 
-/* styles.css */
 
 .ingredient-container {
     display: flex;
@@ -99,4 +97,3 @@ button {
     margin-top: 20px;
     text-align: center;
   }
-  
