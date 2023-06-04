@@ -33,18 +33,10 @@
 
  <div class="comments-section">
     <h2>Komentari</h2>
-    {% for komentar in komentari %}
+   {% for komentar in komentari %}
+     
     <div class="comment">
-        {% if user.is_authenticated and user == komentar.user %}
-        <form action="" method="POST">
-            {% csrf_token %}
-            <textarea name="komentar" rows="2" required>{{ komentar.tekst }}</textarea>
-            <input type="hidden" name="komentar_id" value="{{ komentar.id }}">
-            <button type="submit">Sačuvaj</button>
-        </form>
-        {% else %}
         <p>{{ komentar.tekst }}</p>
-        {% endif %}
     </div>
     {% endfor %}
 
