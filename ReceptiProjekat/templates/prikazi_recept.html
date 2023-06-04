@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'recept_prikazi_style.css' %}">
+  <link rel="stylesheet" href="{% static 'prikazi_recept.css' %}">
   <title>Recipe Page</title>
 </head>
 
@@ -43,19 +43,20 @@
 
          {% if user.is_authenticated and user == komentar.user %}
 
-        <div class="comment-actions">
-            <form action="{% url 'edit_komentar' komentar.id %}" method="POST">
-                {% csrf_token %}
-                <div class="edit-comment-section">
-                <textarea class="edit-comment-input" name="new_text" rows="3">{{ komentar.tekst }}</textarea>
-                <button class="edit-btn" type="submit">Edit</button>
+         <div class="comment-actions">
+          <form action="{% url 'edit_komentar' komentar.id %}" method="POST">
+            {% csrf_token %}
+            <div class="edit-comment-section">
+              <textarea class="edit-comment-input" name="new_text" rows="3">{{ komentar.tekst }}</textarea>
+              <button class="edit-btn" type="submit">Edit</button>
             </div>
-            </form>
-            <form action="{% url 'izbrisi_komentar' komentar.id %}" method="POST">
-                {% csrf_token %}
-                <button class="delete-btn" type="submit">Delete</button>
-            </form>
+          </form>
+          <form action="{% url 'izbrisi_komentar' komentar.id %}" method="POST">
+            {% csrf_token %}
+            <button class="delete-btn" type="submit">Delete</button>
+          </form>
         </div>
+        
         {% else %}
         <p>{{ komentar.tekst }}</p>
         {% endif %}

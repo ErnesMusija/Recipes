@@ -66,28 +66,40 @@ body {
 }
 
 .comment {
-  background-color: #f5f5f5;
+  background-color: linear-gradient(45deg, #ebc792, #ffb13b);
   padding: 0;
   margin-bottom: 10px;
 }
 
-.comment-actions {
-  display: flex;
-  justify-content: flex-start;
-}
+
 
 .comment-actions form {
   margin-right: 10px;
+  display: inline-block;
 }
 
-.comment-actions .delete-btn {
-  background-color: red;
-  color: white;
-}
-.comment-actions .edit-btn {
-  background-color: green;
-  color: white;
-}
+.comment-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .comment-actions .delete-btn {
+    background-color: red;
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    
+  }
+  
+  .comment-actions .edit-btn {
+    background-color: green;
+    color: white;
+    margin-right: 200px;
+    margin-right: 200px;
+    margin-top: 10px;
+  }
+  
 
 .comment-actions .edit-toggle-btn{
 background-color: green;
@@ -137,3 +149,4 @@ background-color: green;
     width: 400px; /* Podešavanje širine slike */
     height: 300px; /* Podešavanje visine slike */
   }
+  
