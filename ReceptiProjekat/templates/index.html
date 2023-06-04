@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
-    <link rel="stylesheet" href="{% static 'style_index.css' %}">
+    <link rel="stylesheet" href="{% static 'index_style.css' %}">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
    
 
@@ -67,16 +67,28 @@
             </span></li>
   
             <li><a href="/logout">LOGOUT</a></li>
-            <li><a href="/pretraga_recepata">Pretrazi sve recepte</a></li>
-            <li><a href="/preporuka_recepta">Preporuka recepta</a></li>
+            <li>
+              <a href="/autori">
+                O nama
+              </a>
+            </li>
+            <li>
+              <a class="" href="/kontakt">
+                Kontakt
+              </a>
+            </li>
           </ul>
           
           
         </nav>
       </div>
 
-
-
+      <div class="button-container">
+        <a href="/pretraga_recepata" class="button"><strong>Pretrazi sve recepte</strong></a>
+        <a href="/preporuka_recepta" class="button"><strong>Preporuka recepta</strong></a>
+      </div>
+      
+      
       <h2 id="saban" >Najpopularniji recepti:</h2>
       <ul class="recepti-container">
         {% for recept in popularni_recepti %}
@@ -168,26 +180,9 @@
             </div>
             <div class="info_links">
               <ul>
-                <li class="active">
-                  <a href="/">
-                    Pocetna
-                  </a>
-                </li>
-                <li>
-                  <a href="/autori">
-                    O nama
-                  </a>
-                </li>
-                <li>
-                  <a class="" href="/kontakt">
-                    Kontakt
-                  </a>
-                </li>
-                <li>
-                  <a class="" href="testimonial.html">
-                    Izjava
-                  </a>
-                </li>
+                
+              
+               
               </ul>
             </div>
             <div class="social_box">
@@ -209,13 +204,24 @@
         <!-- footer section -->
         <footer class="footer_section">
           <div class="container">
+           
+              <h4>Contact</h4>
+              <p><i class="centar"></i>Kakanj, BiH</p>
+              <p><i class="centar"></i>+012 345 67890</p>
+              <p><i class="centar"></i>info@size.ba</p>
+          </div>
+          <div class="footer-bottom">
             <p>
               &copy; <span id="displayYear"></span> Sva prava pridržava
-              <a href="/">Belmin i Ernes</a><br>
+              <a href="/">Belmin i Ernes</a>
+            </p>
+            <p>
               Distribuirao: <a href="/">Certigon</a>
             </p>
           </div>
         </footer>
+        
+        
         <!-- footer section --> 
         
         
