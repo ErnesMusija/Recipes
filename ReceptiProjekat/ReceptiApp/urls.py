@@ -16,5 +16,7 @@ urlpatterns = [
     path('autori', views.autori, name="autori"),
     path('komentari', views.autori, name="komentari"),
     path('prikazi_recept/<int:recept_id>', views.prikazi_recept, name="prikazi_recept"),
+    path('izbrisi_komentar/<int:komentar_id>', views.izbrisi_komentar, name="izbrisi_komentar"),
+    path('edit_komentar/<int:komentar_id>', views.edit_komentar, name="edit_komentar"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +\
               static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

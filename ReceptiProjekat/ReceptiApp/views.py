@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import get_user_model
 from django.contrib import messages
@@ -158,6 +158,8 @@ def prikazi_recept(request, recept_id):
         novi_komentar = Komentar.objects.create(tekst=komentar, user=request.user, recept=recept)
         novi_komentar.save()
 
+        return redirect('prikazi_recept', recept_id=recept_id)
+
     komentari = Komentar.objects.filter(recept_id=recept_id)
     context = {
         'recept': recept,
@@ -165,3 +167,32 @@ def prikazi_recept(request, recept_id):
     }
 
     return render(request, 'prikazi_recept.html', context)
+
+
+def izbrisi_komentar(request, komentar_id):
+    comment = get_object_or_404(Komentar, id=komentar_id)
+
+    # Check if the logged-in user is the owner of the comment
+    if comment.user == request.user:
+        comment.delete()
+
+    # Redirect to the same page after deleting the comment
+    return redirect('prikazi_recept', recept_id=comment.recept.id)
+
+
+def edit_komentar(request, komentar_id):
+    komentar = get_object_or_404(Komentar, id=komentar_id)
+
+    if request.method == 'POST':
+        new_text = request.POST['new_text']
+        komentar.tekst = new_text
+        komentar.save()
+
+        # Redirect to the same page after editing the comment
+        return redirect('prikazi_recept', recept_id=komentar.recept.id)
+
+    context = {
+        'comment': komentar,
+    }
+
+    return render(request, 'edit_comment.html', context)
