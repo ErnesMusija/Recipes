@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,7 +14,7 @@
  <!-- bootstrap core css -->
  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
  
-        <link rel="stylesheet" href="{% static 'pretraga.css' %}">
+        <link rel="stylesheet" href="{% static 'pretragaa.css' %}">
   </head>
   <body>
     <style>
@@ -71,14 +70,15 @@
         <button type="submit">Pretrazi</button>
       </form>
     </div>
+    <!-- mozda stavit da se klikne na recept za detalje, mozda u bazu stavit nacin pripreme npr lorem ipsum -->
     <ul id="tasks">
       {% for recept in recepti %}
-         <a href="/prikazi_recept/{{ recept.id }}">
-        <li> <h3>  <a style="font-size: 25px" href="/prikazi_recept/{{ recept.id }}"> {{recept.naziv}} - <a href="/prikazi_recept/{{ recept.id }}" style="font-size: 15px"> {{recept.opis}} </a> </h3>
+        <li> <h3> {{recept.naziv}} - <a style="font-size: 15px"> {{recept.opis}} </a> </h3>
+             <a href="/prikazi_recept/{{ recept.id }}">
         <img style="width: 200px; height: 200px; object-fit: cover;" src="{{ recept.slika.url }}" alt="{{ recept.naziv }}" />
     </li>
-
     <ul>
+       
     {% for sastojak in recept.sastojci.all %}
         <li> <h4>  {{ sastojak.naziv }} </h4></li>
     {% endfor %}
